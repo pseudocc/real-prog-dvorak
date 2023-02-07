@@ -1,0 +1,18 @@
+{
+  "name": "keyboard",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "package.json",
+    "lib"
+  ],
+  "devDependencies": {
+    "@ijprest/kle-serial": "^0.15.1",
+    "vanix": "github:pseudocc/vanix",
+    "vite": "^4.1.1"
+  },
+  "scripts": {
+    "prepare": "node keyboard.js",
+    "build": "npm run prepare && vite build"
+  }
+}

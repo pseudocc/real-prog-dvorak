@@ -1,0 +1,39 @@
+.container {
+  background-color: #ebebeb;
+  border-radius: 6px;
+  padding: 9px;
+  box-sizing:  content-box;
+  font-family: system-ui;
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+}
+
+.keycap {
+  width: 54px;
+  height: 54px;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: #ccc;
+}
+
+.keycap.selected {
+  filter: contrast(.7) sepia(.7);
+}
+
+.key {
+  position: relative;
+  box-sizing: border-box;
+  left: 6px;
+  top: 3px;
+  width: calc(100% - 12px);
+  height: 42px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 3px;
+  backdrop-filter: brightness(1.25);
+  display: grid;
+}

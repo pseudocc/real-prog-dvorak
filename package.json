@@ -1,0 +1,28 @@
+{
+  "name": "real-prog-dvorak",
+  "version": "0.1.0",
+  "description": "personal keyboard layout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pseudocc/real-prog-dvorak.git"
+  },
+  "keywords": [
+    "dvorak",
+    "keyboard-layout"
+  ],
+  "workspace": [
+    "keyboard",
+    "tutor",
+    "app"
+  ],
+  "author": "pseudoc <atlas.yu@canonical.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pseudocc/real-prog-dvorak/issues"
+  },
+  "homepage": "https://github.com/pseudocc/real-prog-dvorak#readme"
+}

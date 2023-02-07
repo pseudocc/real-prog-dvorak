@@ -1,0 +1,23 @@
+.label0, .label1, .label2 {
+  vertical-align: top;
+}
+
+.label3, .label4, .label5 {
+  vertical-align: middle;
+}
+
+.label6, .label7, .label8 {
+  vertical-align: bottom;
+}
+
+.label0, .label3, .label6 {
+  text-align: left;
+}
+
+.label1, .label4, .label7 {
+  text-align: center;
+}
+
+.label2, .label5, .label8 {
+  text-align: right;
+}
