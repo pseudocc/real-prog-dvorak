@@ -2,10 +2,10 @@ import kle from '@ijprest/kle-serial';
 import fs from 'node:fs';
 
 const meta = {
-  user: "pseudocc",
-  gist: "dbb92bdd7c9b13380194a4e436c2265f",
-  commit: "bc8f4695a3b67e43ccaa9acf1dda3beb3da0bb18",
-  file: "real-prog-dvorak.kbd.json",
+  user: 'pseudocc',
+  gist: 'dbb92bdd7c9b13380194a4e436c2265f',
+  commit: 'bc8f4695a3b67e43ccaa9acf1dda3beb3da0bb18',
+  file: 'real-prog-dvorak.kbd.json',
 };
 
 async function fetch_keyboard() {

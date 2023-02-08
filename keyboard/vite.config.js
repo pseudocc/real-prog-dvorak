@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import path from 'node:path'
+import path from 'node:path';
 
 export default defineConfig({
   build: {
@@ -11,13 +11,13 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@styles": path.resolve(__dirname, "styles"),
+      '@styles': path.resolve(__dirname, 'styles'),
     },
   },
   css: {
     modules: {
-      localsConvention: "dashesOnly",
-      generateScopedName: "[hash:base64:3]",
+      localsConvention: 'dashesOnly',
+      generateScopedName: '[hash:base64:3]',
     },
   }
 });
