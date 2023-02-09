@@ -1,0 +1,18 @@
+{
+  "name": "rpd-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "acorn-private-methods": "^1.0.0",
+    "keyboard": "*",
+    "tutor": "*",
+    "vanix": "github:pseudocc/vanix",
+    "vite": "^4.1.1"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}

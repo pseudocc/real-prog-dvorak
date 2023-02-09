@@ -1,0 +1,34 @@
+.sidebar {
+  margin: 12px;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+  height: fit-content;
+  border: 1px solid #6e6a86;
+  border-radius: 5px;
+  min-height: calc(90vh - 64px);
+  overflow-y: auto;
+}
+
+.route {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: #eb6f92;
+  font-size: 24px;
+  padding: 4px 8px;
+}
+
+.route.secondary {
+  font-weight: normal;
+  font-size: 16px;
+  color: #f6c177;
+  padding-left: 16px;
+}
+
+.route.secondary::before {
+  content: "-";
+  color: #6e6a86;
+  padding-right: 8px;
+}

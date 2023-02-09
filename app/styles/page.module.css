@@ -1,0 +1,27 @@
+.container {
+  max-width: calc(100% - 18px);
+  margin: auto;
+  height: 100%;
+}
+
+.note {
+  font-family: system-ui;
+  font-size: 24px;
+  color: #6e6a86;
+}
+
+.text {
+  font-family: monospace;
+  font-size: 14px;
+  color: #e0def4;
+  text-align: justify;
+}
+
+.container a {
+  color: #eb6f92;
+}
+
+.main {
+  flex: 1;
+  padding: 0 16px;
+}

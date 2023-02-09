@@ -1,0 +1,40 @@
+.pager {
+  min-width: 48px;
+  height: 90%;
+  user-select: none;
+  margin: 0;
+  padding: 0 1rem;
+  opacity: 25%;
+}
+
+.pager a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.pager.active {
+  opacity: 50%;
+}
+
+.pager.right {
+  right: 1rem;
+}
+
+.pager.inactive a {
+  pointer-events: none;
+}
+
+.pager.inactive {
+  cursor: not-allowed;
+}
+
+.pager.active:hover {
+  opacity: 1;
+  background-color: #524f67;
+}
+
+.pager.inactive:hover {
+  opacity: 0.5;
+  background-color: #524f67;
+}

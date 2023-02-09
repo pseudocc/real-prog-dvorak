@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  background-color: #232136;
+  width: 100%;
+  min-width: fit-content;
+}
+
+#app {
+  display: flex;
+}
+
+#app .page {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+  color: #e0def4;
+  height: calc(100vh - 80px);
+}
+
+#app .page p.title {
+  margin: 16px;
+  font-family: monospace;
+  letter-spacing: .2rem;
+  font-size: 48px;
+  color: #9ccfd8;
+}
+
+.header {
+  background-color: #ea9a97;
+  display: flex;
+  align-items: baseline;
+  padding: 8px 16px;
+  user-select: none;
+}
+
+.header .title {
+  color: #3e8fb0;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: system-ui;
+  flex: 1;
+  line-height: 48px;
+}
+
+.header span {
+  padding-left: 8px;
+}
