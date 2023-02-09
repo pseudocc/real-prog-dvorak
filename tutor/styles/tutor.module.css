@@ -1,11 +1,12 @@
 .container {
   font-family: monospace;
-  background-color: #ccc;
-  border: 1px black solid;
+  background-color: #faf4ed;
+  border: 1px #575279 solid;
   border-radius: 5px;
   width: 800px;
   font-size: 16px;
-  padding: 4px 8px;
+  padding: 8px 16px;
+  text-align: left;
 }
 
 .line {
@@ -15,14 +16,12 @@
 
 .line.eol::after {
   content: '↵';
-  color: white;
-  background-color: black;
+  color: #fffaf3;
+  background-color: #575279;
 }
 
-
 .line.eol.bad::after {
-  content: '↵';
-  color: red;
+  color: #b4637a;
   background-color: transparent !important;
 }
 
@@ -32,22 +31,22 @@
 }
 
 span.none {
-  color: grey;
+  color: #9893a5;
 }
 
 span.good {
-  color: green;
+  color: #56949f;
 }
 
 span.bad {
-  color: red;
+  color: #b4637a;
 }
 
 span.now {
-  color: white;
-  background-color: black;
+  color: #fffaf3;
+  background-color: #575279;
 }
 
 span.bad.space {
-  background-color: red;
+  background-color: #b4637a;
 }

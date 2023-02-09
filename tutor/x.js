@@ -86,7 +86,7 @@ function char_ctor(char, tutor) {
 
   const [elem, voix] = vanix(arch);
   if (char === " ") {
-    elem.classList.add("space");
+    elem.classList.add(css.space);
   }
 
   if (char !== MAGIC) {
@@ -185,6 +185,9 @@ export default function tutor_ctor(lines, width = 800) {
     if (ev.altKey || ev.metaKey) {
       return;
     }
+    if (ev.key === " ") {
+      ev.preventDefault();
+    }
     if (ev.key === "r" && ev.ctrlKey) {
       tutor.restart();
     } else if (ev.key.length == 1 || ev.key == "Enter") {
@@ -193,6 +196,7 @@ export default function tutor_ctor(lines, width = 800) {
       tutor.backward();
     }
   };
+  tutor.focus = elem.focus.bind(elem);
 
   return [elem, tutor];
 }
