@@ -4,7 +4,7 @@
   "description": "personal keyboard layout",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"**/*.{js,md}\""
   },
   "repository": {
     "type": "git",
@@ -12,9 +12,10 @@
   },
   "keywords": [
     "dvorak",
-    "keyboard-layout"
+    "keyboard-layout",
+    "typing-tutor"
   ],
-  "workspace": [
+  "workspaces": [
     "keyboard",
     "tutor",
     "app"
@@ -24,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/pseudocc/real-prog-dvorak/issues"
   },
-  "homepage": "https://github.com/pseudocc/real-prog-dvorak#readme"
+  "homepage": "https://github.com/pseudocc/real-prog-dvorak#readme",
+  "devDependencies": {
+    "prettier": "^2.8.4"
+  }
 }
