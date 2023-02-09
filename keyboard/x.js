@@ -46,6 +46,9 @@ function keycap_ctor(key, keycaps) {
   }
 
   let name = key_chars.join("");
+  if (name.includes("real-prog-dvorak")) {
+    name = " ";
+  }
   if (keycaps[name]) {
     name += "R";
   }
@@ -93,7 +96,7 @@ function keycap_ctor(key, keycaps) {
   Object.defineProperty(vrap, "selected", {
     get: () => elem.classList.contains(keyboard_css.selected),
     set: (value) => {
-      if (elem.classList.contains(keyboard.selected) == value) {
+      if (elem.classList.contains(keyboard_css.selected) == value) {
         return;
       }
       vrap.toggle_selected();
