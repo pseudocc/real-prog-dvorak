@@ -1,14 +1,14 @@
-import vanix from 'vanix';
-import keyboard_css from '@styles/keyboard.module.css';
-import label_css from '@styles/label.module.css';
-import keyboard from './keyboard.json' assert { type: 'json' };
+import vanix from "vanix";
+import keyboard_css from "@styles/keyboard.module.css";
+import label_css from "@styles/label.module.css";
+import keyboard from "./keyboard.json" assert { type: "json" };
 
 const KEYBOARD_WIDTH = 16;
 const KEY_SIZE = 54;
 
 /**
  * @param {import('@ijprest/kle-serial').Key} key
- * @param {{ [key: string]: boolean }} keycaps 
+ * @param {{ [key: string]: boolean }} keycaps
  */
 function keycap_ctor(key, keycaps) {
   const labels = [];
@@ -25,22 +25,19 @@ function keycap_ctor(key, keycaps) {
 
     /** @type {Vanix.Arch} */
     const label = {
-      tag: 'span',
+      tag: "span",
       props: [
         {
-          name: 'className',
-          value: label_css['label' + i],
+          name: "className",
+          value: label_css["label" + i],
         },
         {
-          name: 'innerText',
+          name: "innerText",
           value: l,
         },
         {
-          name: 'style',
-          value: [
-            `color: ${color}`,
-            `font-size: ${6 + 2 * size}px`,
-          ].join(';'),
+          name: "style",
+          value: [`color: ${color}`, `font-size: ${6 + 2 * size}px`].join(";"),
         },
       ],
     };
@@ -48,9 +45,9 @@ function keycap_ctor(key, keycaps) {
     labels.push(label);
   }
 
-  let name = key_chars.join('');
+  let name = key_chars.join("");
   if (keycaps[name]) {
-    name += 'R';
+    name += "R";
   }
   keycaps[name] = true;
 
@@ -61,35 +58,39 @@ function keycap_ctor(key, keycaps) {
 
   /** @type {Vanix.Arch} */
   const arch = {
-    tag: 'div',
+    tag: "div",
     props: [
       {
-        name: 'className',
+        name: "className",
         value: keyboard_css.keycap,
       },
       {
-        name: 'style',
-        value: styles.join(';'),
-      }
+        name: "style",
+        value: styles.join(";"),
+      },
     ],
-    children: [{
-      tag: 'div',
-      props: [{
-        name: 'className',
-        value: keyboard_css.key,
-      }],
-      children: labels,
-    }]
+    children: [
+      {
+        tag: "div",
+        props: [
+          {
+            name: "className",
+            value: keyboard_css.key,
+          },
+        ],
+        children: labels,
+      },
+    ],
   };
 
   const [elem] = vanix(arch);
   const vrap = {
     toggle_selected: () => {
       elem.classList.toggle(keyboard_css.selected);
-    }
+    },
   };
   const voix = { [name]: vrap };
-  Object.defineProperty(vrap, 'selected', {
+  Object.defineProperty(vrap, "selected", {
     get: () => elem.classList.contains(keyboard_css.selected),
     set: (value) => {
       if (elem.classList.contains(keyboard.selected) == value) {
@@ -106,12 +107,14 @@ function keycap_ctor(key, keycaps) {
 function row_ctor(keys, keycaps) {
   /** @type {Vanix.Arch} */
   const arch = {
-    tag: 'div',
-    props: [{
-      name: 'className',
-      value: keyboard_css.row,
-    }],
-    children: keys.map(v => ({
+    tag: "div",
+    props: [
+      {
+        name: "className",
+        value: keyboard_css.row,
+      },
+    ],
+    children: keys.map((v) => ({
       ctor: keycap_ctor,
       ctor_args: [v, keycaps],
     })),
@@ -125,14 +128,14 @@ function keyboard_ctor(keyboard) {
   const keycaps = {};
   /** @type {Vanix.Arch} */
   const arch = {
-    tag: 'div',
+    tag: "div",
     props: [
       {
-        name: 'className',
+        name: "className",
         value: keyboard_css.container,
       },
       {
-        name: 'style',
+        name: "style",
         value: `width: ${KEYBOARD_WIDTH * KEY_SIZE}px`,
       },
     ],
@@ -145,7 +148,8 @@ function keyboard_ctor(keyboard) {
   return vanix(arch);
 }
 
-const [elem, voix] = keyboard_ctor(keyboard);
-delete voix.native;
-
-export { elem, voix };
+export default function dvorak_ctor() {
+  const [elem, voix] = keyboard_ctor(keyboard);
+  delete voix.native;
+  return [elem, voix];
+}

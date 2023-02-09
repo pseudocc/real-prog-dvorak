@@ -1,14 +1,17 @@
 {
   "name": "keyboard",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "files": [
     "package.json",
     "lib"
   ],
+  "main": "lib/keyboard.js",
+  "dependencies": {
+    "vanix": "github:pseudocc/vanix"
+  },
   "devDependencies": {
     "@ijprest/kle-serial": "^0.15.1",
-    "vanix": "github:pseudocc/vanix",
     "vite": "^4.1.1"
   },
   "scripts": {
