@@ -1,0 +1,53 @@
+.container {
+  font-family: monospace;
+  background-color: #ccc;
+  border: 1px black solid;
+  border-radius: 5px;
+  width: 800px;
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+.line {
+  margin: 0;
+  line-height: 28px;
+}
+
+.line.eol::after {
+  content: '↵';
+  color: white;
+  background-color: black;
+}
+
+
+.line.eol.bad::after {
+  content: '↵';
+  color: red;
+  background-color: transparent !important;
+}
+
+.line span {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+span.none {
+  color: grey;
+}
+
+span.good {
+  color: green;
+}
+
+span.bad {
+  color: red;
+}
+
+span.now {
+  color: white;
+  background-color: black;
+}
+
+span.bad.space {
+  background-color: red;
+}

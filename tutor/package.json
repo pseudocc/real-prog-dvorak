@@ -1,0 +1,19 @@
+{
+  "name": "tutor",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "package.json",
+    "lib"
+  ],
+  "main": "lib/tutor.js",
+  "dependencies": {
+    "vanix": "github:pseudocc/vanix"
+  },
+  "devDependencies": {
+    "vite": "^4.1.1"
+  },
+  "scripts": {
+    "build": "vite build"
+  }
+}
