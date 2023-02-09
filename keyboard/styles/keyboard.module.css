@@ -21,6 +21,10 @@
   background-color: #ccc;
 }
 
+.keycap:hover {
+  filter: contrast(1.3);
+}
+
 .keycap.selected {
   filter: contrast(.7) sepia(.7);
 }
