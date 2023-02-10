@@ -1,6 +1,6 @@
 {
   "name": "real-prog-dvorak",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "personal keyboard layout",
   "main": "index.js",
   "scripts": {

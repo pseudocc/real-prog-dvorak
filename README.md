@@ -89,6 +89,7 @@ sudoedit /usr/share/X11/xkb/rules/evdev.xml
 ```
 
 Add this somewhere:
+
 ```xml
 <variant>
   <configItem>
