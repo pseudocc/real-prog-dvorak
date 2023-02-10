@@ -34,13 +34,13 @@ xkb_symbols "real-prog-dvorak" {
     key <AE03> { [          bracketleft,  3       ]       };
     key <AE04> { [          parenleft,  4               ]       };
     key <AE05> { [          ampersand,      5               ]       };
-    key <AE06> { [          equal,  6, dead_circumflex, dead_circumflex ]   };
+    key <AE06> { [          bar,  6, dead_circumflex, dead_circumflex ]   };
     key <AE07> { [          parenright, 7       ]       };
     key <AE08> { [          bracketright, 8       ]       };
     key <AE09> { [          braceright,       9,  dead_grave] };
     key <AE10> { [          asterisk,   0       ]       };
     key <AE11> { [ exclam,      percent ]       };
-    key <AE12> { [ bar, grave,  dead_tilde] };
+    key <AE12> { [ equal, grave,  dead_tilde] };
 
     key <AD01> { [  semicolon,  colon, dead_acute, dead_diaeresis       ] };
     key <AD02> { [      comma,  less,   dead_cedilla, dead_caron        ] };
