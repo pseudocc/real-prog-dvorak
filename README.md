@@ -103,4 +103,4 @@ your computer to get this work.
 
 ## Typing Tutorial
 
-- [x] [rpg-site](https://pseudocc.github.io/real-prog-dvorak/)
+- [x] [real-prog-dvorak](https://pseudocc.github.io/real-prog-dvorak/)
