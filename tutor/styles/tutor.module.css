@@ -12,6 +12,7 @@
 .line {
   margin: 0;
   line-height: 28px;
+  overflow-wrap: break-word;
 }
 
 .line:empty:after {

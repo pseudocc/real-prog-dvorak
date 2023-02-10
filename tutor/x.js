@@ -20,7 +20,7 @@ class Tutor {
 
   restart() {
     while (this.#index >= 0) {
-      this.current.reset();
+      this.current?.reset();
       this.#index--;
     }
     this.index = 0;
@@ -29,7 +29,7 @@ class Tutor {
   restart_line() {
     let prev;
     while ((prev = this.previous) && prev.key != "Enter") {
-      this.current.reset();
+      this.current?.reset();
       this.#index--;
     }
     this.current.now();
