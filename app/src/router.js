@@ -13,11 +13,12 @@
 export default function router_init(routes, page) {
   function route(event) {
     event = event || window.event;
-    if (event.target.href) {
+    const href = event.target.href || event.currentTarget.href;
+    if (href) {
       event.preventDefault();
+      window.history.pushState({}, 0, href);
+      relocate();
     }
-    window.history.pushState({}, 0, event.target.href);
-    relocate();
   }
 
   function may_redirect() {
