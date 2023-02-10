@@ -35,7 +35,7 @@ export default function course_ctor() {
           {
             name: "textContent",
             value:
-              "This site contains three Dvorak keyboard layout, a basic one, and three dedicated ones that cover the common use cases in essay writing, command line inputing and coding for real-prog-dvorak.",
+              "This site contains four Dvorak keyboard layout courses, a basic one, and one for Pogrammer Dvoark, and real world programming.",
           },
         ],
       },

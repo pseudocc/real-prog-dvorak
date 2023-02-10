@@ -1,9 +1,25 @@
 import vanix from "vanix";
 import css from "@styles/page.module.css";
-import tutor from "tutor";
+import tutor, { MAGIC } from "tutor";
 import { prev_ctor, next_ctor } from "../../components/pager";
 
 function main_ctor(i, title, lines) {
+  const nlines = [];
+  for (const line of lines) {
+    let nline = "";
+    let pos = 0;
+    for (const c of line) {
+      if (c === " ") {
+        nline += MAGIC;
+      } else {
+        break;
+      }
+      pos++;
+    }
+    nline += line.substring(pos);
+    nlines.push(nline);
+  }
+
   /** @type {Vanix.Arch} */
   const arch = {
     tag: "div",
@@ -56,7 +72,7 @@ function main_ctor(i, title, lines) {
           {
             ctor: tutor,
             name: "tutor",
-            ctor_args: [lines],
+            ctor_args: [nlines],
             props: [
               {
                 name: "style",

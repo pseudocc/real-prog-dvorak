@@ -13,9 +13,20 @@
 export default function router_init(routes, page) {
   function route(event) {
     event = event || window.event;
-    event.preventDefault();
+    if (event.target.href) {
+      event.preventDefault();
+    }
     window.history.pushState({}, 0, event.target.href);
     relocate();
+  }
+
+  function may_redirect() {
+    if (window.location.search.includes("?/")) {
+      const href = window.location.href.replace("?/", "");
+      route({ target: { href }, preventDefault: () => 0 });
+    } else {
+      relocate();
+    }
   }
 
   async function relocate() {
@@ -30,7 +41,7 @@ export default function router_init(routes, page) {
     page.appendChild(route.elem);
   }
 
-  relocate();
+  may_redirect();
   window.onpopstate = relocate;
 
   return route;

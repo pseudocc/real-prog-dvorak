@@ -3,6 +3,8 @@ import page404_ctor from "./pages/404";
 import course_ctor from "./pages/course";
 import home_ctor from "./pages/home";
 import basic_ctor, { lessons as basic_lessons } from "./pages/lessons/basic";
+import prog_ctor, { lessons as prog_lessons } from "./pages/lessons/prog";
+import real_ctor, { lessons as real_lessons } from "./pages/lessons/real";
 import router_init from "./router";
 import keyboard from "keyboard";
 
@@ -51,6 +53,8 @@ function get_routes() {
   const home = make_handler("Home", home_ctor);
   const courses = make_handler("Courses", course_ctor);
   const basic = make_handler("Basic", basic_ctor);
+  const prog = make_handler("Programmer", prog_ctor);
+  const real = make_handler("Real World", real_ctor);
 
   /**
    * @type {import('./router').Routes}
@@ -59,6 +63,8 @@ function get_routes() {
     "/": home,
     "/courses/": courses,
     "/basic/": { ...basic, secondary: true },
+    "/prog/": { ...prog, secondary: true },
+    "/real/": { ...real, secondary: true },
   };
 
   routes = Object.keys(routes).reduce(
@@ -69,7 +75,7 @@ function get_routes() {
     { 404: page404 }
   );
 
-  for (const course of [basic_lessons]) {
+  for (const course of [basic_lessons, prog_lessons, real_lessons]) {
     for (let i = 0; i < course.length; i++) {
       const lesson = course[i];
       lesson.href = __APP__.base + lesson.href;
@@ -90,13 +96,15 @@ function receive() {
   this.select(key);
 }
 
+window.route = function (ev) {
+  window.internal_route && window.internal_route(ev);
+};
+
 window.onload = function () {
   const routes = get_routes();
 
   const page = document.createElement("div");
   page.className = "page";
-
-  window.route = router_init(routes, page);
 
   let [kbd, kbdx] = keyboard();
   kbd.style.margin = "auto";
@@ -125,7 +133,7 @@ window.onload = function () {
         kbdh.mapping[lower.toUpperCase()] = [kbdx[key], kbdx["Shift"]];
       }
       kbdh.mapping[lower] = [kbdx[key]];
-    } else if (key.length === 2) {
+    } else if (key.length === 2 && key !== "Fn") {
       kbdh.mapping[key[0]] = [kbdx[key], kbdx["Shift"]];
       kbdh.mapping[key[1]] = [kbdx[key]];
     } else {
@@ -138,6 +146,7 @@ window.onload = function () {
     handler: kbdh,
   };
 
+  window.internal_route = router_init(routes, page);
   const [sidebar] = sidebar_ctor(routes);
 
   const app = document.getElementById("app");

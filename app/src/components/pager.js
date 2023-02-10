@@ -23,7 +23,11 @@ function pager_ctor(left, href) {
         props: [
           {
             name: "href",
-            value: href ? app.base + href : "",
+            value: href || "",
+          },
+          {
+            name: "onclick",
+            value: window.route,
           },
         ],
         children: [
@@ -32,7 +36,7 @@ function pager_ctor(left, href) {
             props: [
               {
                 name: "src",
-                value: `/caret-${left ? "left" : "right"}.svg`,
+                value: __APP__.base + `/caret-${left ? "left" : "right"}.svg`,
               },
               {
                 name: "width",

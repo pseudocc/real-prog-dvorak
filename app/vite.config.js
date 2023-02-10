@@ -2,10 +2,10 @@ import { defineConfig } from "vite";
 import path from "node:path";
 import acorn from "acorn-private-methods";
 
-const base = "";
+const base = "/real-prog-dvorak";
 
 export default defineConfig({
-  base,
+  base: base + "/",
   build: {
     rollupOptions: {
       acornInjectPlugins: [acorn],
