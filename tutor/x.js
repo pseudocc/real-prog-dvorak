@@ -19,7 +19,20 @@ class Tutor {
   }
 
   restart() {
+    while (this.#index >= 0) {
+      this.current.reset();
+      this.#index--;
+    }
     this.index = 0;
+  }
+
+  restart_line() {
+    let prev;
+    while ((prev = this.previous) && prev.key != "Enter") {
+      this.current.reset();
+      this.#index--;
+    }
+    this.current.now();
   }
 
   push(c) {
@@ -73,13 +86,20 @@ class Tutor {
 }
 
 function char_ctor(char, tutor) {
+  let text = char;
+  if (char === MAGIC || char === " ") {
+    text = "&nbsp;";
+  } else if (char == "\t") {
+    text = "&nbsp;&nbsp;&nbsp;&nbsp;";
+  }
+
   /** @type {Vanix.Arch} */
   const arch = {
     tag: "span",
     props: [
       {
-        name: "textContent",
-        value: char === MAGIC ? " " : char,
+        name: "innerHTML",
+        value: text,
       },
     ],
   };
@@ -117,6 +137,12 @@ function line_ctor(line, tutor, eof) {
       ctor_args: [c, tutor],
     });
   }
+
+  children.push({
+    ctor: char_ctor,
+    ctor_args: [MAGIC, tutor],
+  });
+
   /** @type {Vanix.Arch} */
   const arch = {
     tag: "p",
@@ -188,8 +214,14 @@ export default function tutor_ctor(lines, width = 800) {
     if (ev.key === " ") {
       ev.preventDefault();
     }
-    if (ev.key === "r" && ev.ctrlKey) {
-      tutor.restart();
+    if (ev.ctrlKey) {
+      if (ev.key === "r") {
+        ev.preventDefault();
+        tutor.restart();
+      } else if (ev.key === "l") {
+        ev.preventDefault();
+        tutor.restart_line();
+      }
     } else if (ev.key.length == 1 || ev.key == "Enter") {
       tutor.forward(ev.key);
     } else if (ev.key == "Backspace") {
