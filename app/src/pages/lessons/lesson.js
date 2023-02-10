@@ -86,7 +86,7 @@ function main_ctor(i, title, lines) {
             props: [
               {
                 name: "style",
-                value: "padding: 16px",
+                value: "padding: 16px; filter: contrast(.5)",
               },
             ],
           },

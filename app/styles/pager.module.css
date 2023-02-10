@@ -17,10 +17,6 @@
   opacity: 50%;
 }
 
-.pager.right {
-  right: 1rem;
-}
-
 .pager.inactive a {
   pointer-events: none;
 }
