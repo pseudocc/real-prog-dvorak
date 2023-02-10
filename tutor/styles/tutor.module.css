@@ -11,8 +11,11 @@
 
 .line {
   margin: 0;
-  content: "";
   line-height: 28px;
+}
+
+.line:empty:after {
+  content: "\a0";
 }
 
 .line.eol::after {

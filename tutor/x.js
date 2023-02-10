@@ -138,11 +138,6 @@ function line_ctor(line, tutor, eof) {
     });
   }
 
-  children.push({
-    ctor: char_ctor,
-    ctor_args: [MAGIC, tutor],
-  });
-
   /** @type {Vanix.Arch} */
   const arch = {
     tag: "p",
