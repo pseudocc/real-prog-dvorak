@@ -2,6 +2,10 @@
 
 This is a modified version of the 'Programmers Dvorak'.
 
+## Typing Tutorial
+
+- [x] [real-prog-dvorak](https://pseudocc.github.io/real-prog-dvorak/)
+
 ## Keyboard Layout
 
 I use Vim all the time, and I am using a 68 keys keyboard.
@@ -101,7 +105,3 @@ Add this somewhere:
 
 Open keyboard settings, and add this layout, you may need to reboot or log out
 your computer to get this work.
-
-## Typing Tutorial
-
-- [x] [real-prog-dvorak](https://pseudocc.github.io/real-prog-dvorak/)
