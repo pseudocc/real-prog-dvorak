@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+add_divert() {
+    BAK="$1.bak"
+    dpkg-divert --rename \
+        --package "xkb-rpd" \
+        --divert "$BAK" \
+        --add "$1"
+
+    cp "$BAK" "$1"
+    patch "$1" < "$1.rpd"
+}
+
+if [ "$1" = "configure" ] || [ "$1" = "abort-remove" ]; then
+    add_divert /usr/share/X11/xkb/symbols/us
+    add_divert /usr/share/X11/xkb/rules/evdev.xml
+
+    dpkg-reconfigure xkb-data
+fi

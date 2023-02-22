@@ -1,0 +1,24 @@
+Source: real-prog-dvorak
+Section: x11
+Priority: optional
+Maintainer: Atlas Yu <atlas.yu@canonical.com>
+Build-Depends:
+ debhelper-compat (=12),
+ dpkg-dev (>= 1.16.1),
+Standards-Version: 4.6.0
+Homepage: https://pseudocc.github.io/real-prog-dvorak
+Vcs-Git: https://github.com/pseudocc/real-prog-dvorak.git
+Vcs-Browser: https://github.com/pseudocc/real-prog-dvorak
+
+Package: xkb-rpd
+Architecture: any
+Priority: optional
+Depends:
+ xkb-data (>= 2.33-1),
+ dpkg (>= 1.19.1),
+ ${misc:Depends},
+Description: X Keyboard Extension (XKB) configuration data for rpd
+ This package contains configuration data used by the X Keyboard
+ Extension (XKB) for Real Programmers Dvorak.
+ .
+ This package will add an entry in the US Keyboard Layouts.

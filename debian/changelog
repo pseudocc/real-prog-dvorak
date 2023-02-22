@@ -1,0 +1,5 @@
+real-prog-dvorak (0.1.0) jammy; urgency=medium
+
+  * Initial release.
+
+ -- Atlas Yu <atlas.yu@canonical.com>  Wed, 22 Feb 2023 17:50:11 +0800

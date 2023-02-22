@@ -1,0 +1,25 @@
+*** /usr/share/X11/xkb/rules/evdev.xml	2023-02-22 16:31:11.102062314 +0800
+--- /home/catlas/evdev.xml	2023-02-22 16:04:51.989435418 +0800
+***************
+*** 1404,1417 ****
+--- 1404,1423 ----
+            <configItem>
+              <name>dvorak</name>
+              <description>English (Dvorak)</description>
+            </configItem>
+          </variant>
+          <variant>
+            <configItem>
++             <name>real-prog-dvorak</name>
++             <description>English (Real Programmers Dvorak)</description>
++           </configItem>
++         </variant>
++         <variant>
++           <configItem>
+              <name>dvorak-intl</name>
+              <description>English (Dvorak, intl., with dead keys)</description>
+            </configItem>
+          </variant>
+          <variant>
+            <configItem>
+              <name>dvorak-alt-intl</name>

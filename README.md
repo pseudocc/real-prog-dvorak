@@ -16,7 +16,17 @@ The keyboard layout is genereated by
 [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/#/gists/dbb92bdd7c9b13380194a4e436c2265f).
 You may use the above link to create your fork.
 
-Use this keyboard layout (Ubuntu 20.04/22.04):
+Use this keyboard layout (Ubuntu 22.04):
+
+Download and install the debian binary package.
+
+```bash
+wget https://github.com/pseudocc/real-prog-dvorak/release/download/stable/xkb-rpd.deb && sudo dpkg -i xkb-rpd.deb
+rm -f xkb-rpd.deb
+```
+
+Otherwise you can do this manually, by following the steps below.
+
 Edit the X11 keyboard symbols, for example I am changing the US Keyboard Layout:
 
 ```bash

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+remove_divert() {
+    diverter=$(dpkg-divert --listpackage "$1")
+    if [ "$diverter" = "xkb-rpd" ]; then
+        patch -R "$1" < "$1.rpd"
+        rm -f "$1"
+        dpkg-divert --package "xkb-rpd" --rename --remove "$1"
+    fi
+}
+
+if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
+    remove_divert /usr/share/X11/xkb/symbols/us
+    remove_divert /usr/share/X11/xkb/rules/evdev.xml
+
+    dpkg-reconfigure xkb-data
+fi
