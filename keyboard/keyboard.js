@@ -4,7 +4,7 @@ import fs from "node:fs";
 const meta = {
   user: "pseudocc",
   gist: "dbb92bdd7c9b13380194a4e436c2265f",
-  commit: "bc8f4695a3b67e43ccaa9acf1dda3beb3da0bb18",
+  commit: "e2468c1342565692582ffaae2e3d413b7660ec45",
   file: "real-prog-dvorak.kbd.json",
 };
 

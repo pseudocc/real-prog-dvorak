@@ -56,7 +56,8 @@ function keycap_ctor(key, keycaps) {
 
   const styles = [`background-color: ${key.color}`];
   if (key.width != 1) {
-    styles.push(`width: ${Math.round(KEY_SIZE * key.width)}px`);
+    const width = Math.round(KEY_SIZE * key.width * 10) / 10;
+    styles.push(`width: ${width}px`);
   }
 
   /** @type {Vanix.Arch} */
