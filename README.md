@@ -2,6 +2,12 @@
 
 This is a modified version of the 'Programmers Dvorak'.
 
+### ⚠️ No Longer Use ⚠️
+
+I'm now using a custom keyboard with a 18 keys layout.
+
+I build the firmware with zmk, here is my [zmk config](https://github.com/pseudocc/zmk-config}.
+
 ## Typing Tutorial
 
 - [x] [real-prog-dvorak](https://pseudocc.github.io/real-prog-dvorak/)
